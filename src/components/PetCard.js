@@ -11,7 +11,7 @@ const PetCard = (props) => {
   const { id, name, species, about, location, onPetSelectCallback } = props;
 
   const onSelect = () => {
-    onPetSelectCallback()
+    onPetSelectCallback(id)
   }
   return (
     <div className="card pet-card">
