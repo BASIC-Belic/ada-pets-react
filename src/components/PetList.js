@@ -9,7 +9,7 @@ const PetList = (props) => {
 
   const pets = props.pets.map((pet, i) => {
     return (
-      <PetCard id={pet.id} key={i} name={pet.name} species={pet.species} about={pet.about} location={pet.name} onPetSelectCallback={props.onSelectPet}/>
+      <PetCard id={pet.id} key={i} name={pet.name} species={pet.species} about={pet.about} location={pet.name} onPetSelectCallback={props.onSelectPet} onPetDeleteCallback={props.onPetDelete}/>
     )
   })
 

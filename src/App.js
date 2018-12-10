@@ -28,6 +28,22 @@ class App extends Component {
     })
   }
 
+  deletePet = (id) => {
+    let updatedPetList = this.state.petList
+    const petIndex = updatedPetList.findIndex( s => s.id === id )
+    const deletedPet = updatedPetList.splice(petIndex, 1)
+    this.setState({
+      petList: updatedPetList
+    })
+
+    if (this.state.currentPet === deletedPet[0]) {
+      this.setState({
+        currentPet: undefined
+      })
+    }
+
+  }
+
   render() {
     const { currentPet } = this.state;
 
@@ -35,26 +51,26 @@ class App extends Component {
     let detailsSection = ""
     currentPet ? detailsSection = <PetDetails currentPet={currentPet}/> : detailsSection = ""
 
-    return (
-      <main className="App">
-        <header className="app-header">
-          <h1>Ada Pets</h1>
-        </header>
-        <section className="search-bar-wrapper">
-          { /* Wave 4:  Place to add the SearchBar component */ }
-          <SearchBar />
-        </section>
-        {detailsSection}
-        <section className="pet-list-wrapper">
+      return (
+        <main className="App">
+          <header className="app-header">
+            <h1>Ada Pets</h1>
+          </header>
+          <section className="search-bar-wrapper">
+            { /* Wave 4:  Place to add the SearchBar component */ }
+            <SearchBar />
+          </section>
+          {detailsSection}
+          <section className="pet-list-wrapper">
 
-          <PetList pets={pets} onSelectPet={this.displayCurrentPet}/>
-        </section>
-        <section className="new-pet-form-wrapper">
-          { /* Wave 3:  Where NewPetForm should appear */ }
-        </section>
-      </main>
-    );
+            <PetList pets={pets} onSelectPet={this.displayCurrentPet} onPetDelete={this.deletePet}/>
+          </section>
+          <section className="new-pet-form-wrapper">
+            { /* Wave 3:  Where NewPetForm should appear */ }
+          </section>
+        </main>
+      );
+    }
   }
-}
 
-export default App;
+  export default App;

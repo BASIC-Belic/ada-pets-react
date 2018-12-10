@@ -8,29 +8,33 @@ import speciesEmoji from '../speciesEmoji';
 
 
 const PetCard = (props) => {
-  const { id, name, species, about, location, onPetSelectCallback } = props;
+  const { id, name, species, about, location, onPetSelectCallback, onPetDeleteCallback} = props;
 
   const onSelect = () => {
     onPetSelectCallback(id)
+  }
+  const onDelete = () => {
+    onPetDeleteCallback(id)
   }
   return (
     <div className="card pet-card">
 
       <section className="pet-card--header">
 
-      { speciesEmoji(species) } {id} - {name}
+        { speciesEmoji(species) } {id} - {name}
         <button
           onClick={onSelect}
           className="btn btn-primary pet-card--select-pet-btn"
           >
-            Select
+          Select
         </button>
         <button
           type="button"
           className="btn btn-danger pet-card--close-btn"
           aria-label="Remove"
-        >
-          Removea
+          onClick={onDelete}
+          >
+          Remove
         </button>
       </section>
       <section className="pet-card--body">
