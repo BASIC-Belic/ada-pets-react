@@ -28,9 +28,9 @@ const PetCard = (props) => {
         <button
           type="button"
           className="btn btn-danger pet-card--close-btn"
-          aria-label="Close"
+          aria-label="Remove"
         >
-          Remove
+          Removea
         </button>
       </section>
       <section className="pet-card--body">
