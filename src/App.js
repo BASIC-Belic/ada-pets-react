@@ -22,12 +22,10 @@ class App extends Component {
 
   displayCurrentPet = (id) => {
     const pet = this.state.petList.find( s => s.id === id );
-    // console.log(pet)
 
     this.setState ({
       currentPet: pet
     })
-    console.log(this.state.currentPet)
   }
 
   render() {
