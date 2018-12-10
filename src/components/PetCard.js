@@ -30,7 +30,7 @@ const PetCard = (props) => {
           className="btn btn-danger pet-card--close-btn"
           aria-label="Close"
         >
-          Close
+          Remove
         </button>
       </section>
       <section className="pet-card--body">
