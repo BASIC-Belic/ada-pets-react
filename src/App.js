@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   displayCurrentPet = () => {
-
+alert("here")
   }
 
   render() {

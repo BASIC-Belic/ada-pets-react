@@ -8,21 +8,26 @@ import speciesEmoji from '../speciesEmoji';
 
 
 const PetCard = (props) => {
-  const { id, name, species, about, location } = props;
+  const { id, name, species, about, location, onPetSelectCallback } = props;
+
+  const onSelect = () => {
+    onPetSelectCallback()
+  }
   return (
     <div className="card pet-card">
 
       <section className="pet-card--header">
 
-      { speciesEmoji(species) } {id} - {name} 
-        <button 
+      { speciesEmoji(species) } {id} - {name}
+        <button
+          onClick={onSelect}
           className="btn btn-primary pet-card--select-pet-btn"
           >
             Select
         </button>
-        <button 
-          type="button" 
-          className="btn btn-danger pet-card--close-btn" 
+        <button
+          type="button"
+          className="btn btn-danger pet-card--close-btn"
           aria-label="Close"
         >
           Close
@@ -37,13 +42,13 @@ const PetCard = (props) => {
     </div>
   );
 };
-    
+
 PetCard.propTypes = {
   id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired, 
-  species: PropTypes.string.isRequired, 
-  about: PropTypes.string, 
+  name: PropTypes.string.isRequired,
+  species: PropTypes.string.isRequired,
+  about: PropTypes.string,
   location: PropTypes.string,
 }
-    
+
 export default PetCard;
