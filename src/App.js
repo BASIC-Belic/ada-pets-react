@@ -35,7 +35,7 @@ class App extends Component {
 
     // this.state.currentPet ? { currentPet } = this.state : { currentPet } = ""
     let detailsSection = ""
-    currentPet ? detailsSection = `${<PetDetails currentPet={currentPet}/>}` : detailsSection = ""
+    currentPet ? detailsSection = <PetDetails currentPet={currentPet}/> : detailsSection = ""
 
     return (
       <main className="App">
