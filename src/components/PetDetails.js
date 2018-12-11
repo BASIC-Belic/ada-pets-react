@@ -7,8 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './PetDetails.css';
 
 const PetDetails = (props) => {
-  // if (props.currentPet) { }
-  const { name, location, about, species, images } = props.currentPet;
+
+  const { name, location, about, species} = props.currentPet;
+  let images = props.currentPet.images;
+  if (images === undefined) {
+    images = [""]
+  }
 
   return (
     <section className="pet-details">
