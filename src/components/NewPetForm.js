@@ -42,6 +42,12 @@ class NewPetForm extends Component {
       about: this.state.about,
       species: this.state.species
     })
+
+    this.setState({
+      fullName: "",
+      about: "",
+      species: ""
+    });
   }
 
   render() {
