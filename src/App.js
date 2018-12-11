@@ -70,7 +70,8 @@ class App extends Component {
       })
 
       this.setState({
-        petList: matchingPetArray
+        petList: matchingPetArray,
+        currentPet: undefined
       })
 
       console.log("state", this.state.petList)
