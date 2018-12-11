@@ -45,10 +45,16 @@ class App extends Component {
   addPet = (newPet) => {
     const pets = this.state.petList
     newPet.id = pets[pets.length - 1].id + 1
+    pets.push(newPet);
     console.log("id", newPet.id)
+    console.log("pet", newPet)
+    console.log("pets", pets)
 
     if (newPet.name !== "") {
       //do something, add me
+      this.setState({
+        petList: pets
+      })
     }
     else {
       alert("please enter valid name")
