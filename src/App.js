@@ -58,8 +58,28 @@ class App extends Component {
     }
   }
 
-  searchPet = (petObj) => {
-    console.log(petObj)
+  searchPet = (petSearch) => {
+
+    const regexSearch = new RegExp(petSearch.toLowerCase());
+
+    if (petSearch !== "") {
+
+      const matchingPetArray = this.state.petList.filter((pet) => {
+        return regexSearch.test(pet.name.toLowerCase()) || regexSearch.test(pet.about.toLowerCase()) || regexSearch.test(pet.species.toLowerCase())
+      })
+
+      this.setState({
+        petList: matchingPetArray
+      })
+
+      console.log("state", this.state.petList)
+      console.log(matchingPetArray)
+    }
+    else{
+      this.setState({
+        petList: pets
+      })
+    }
   }
 
   render() {
@@ -79,7 +99,7 @@ class App extends Component {
           {detailsSection}
           <section className="pet-list-wrapper">
 
-            <PetList pets={pets} onSelectPet={this.displayCurrentPet} onPetDelete={this.deletePet}/>
+            <PetList pets={this.state.petList} onSelectPet={this.displayCurrentPet} onPetDelete={this.deletePet}/>
           </section>
           <section className="new-pet-form-wrapper">
             <NewPetForm addPetCallback={this.addPet}/>

@@ -9,50 +9,22 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fullName: "",
-      about: "",
-      species: ""
     };
   }
 
-  searchByName = (event) => {
-    this.setState({
-      fullName: event.target.value,
-    });
-  }
-
-  searchByAbout = (event) => {
-    this.setState({
-      about: event.target.value,
-    });
-  }
-
-  searchBySpecies = (event) => {
-    this.setState({
-      species: event.target.value,
-    });
-  }
-
-  onSearch = () => {
-    this.props.searchPetCallback({
-      name: this.state.fullName,
-      about: this.state.about,
-      species: this.state.species
-    })
+  onSearch = (event) => {
+    // console.log(event.target.value)
+    this.props.searchPetCallback(event.target.value)
   }
 
   render() {
     return (
       <section>
-        <form  className="search-bar-form" onChange={this.onSearch}>
+        <form  className="search-bar-form">
           <h3>Search By Field</h3>
           { /* A form should go here! */ }
-          <label htmlFor="fullName">Name</label>
-          <input name="fullName" type="text" value={this.state.fullName} onChange={this.searchByName}/>
-          <label htmlFor="about">About</label>
-          <input name="about" type="text" value={this.state.about} onChange={this.searchByAbout}/>
-          <label htmlFor="species">Species</label>
-          <input name="species" type="text" value={this.state.species} onChange={this.searchBySpecies}/>
+          <label htmlFor="searchWord">Search a Pet!</label>
+          <input name="searchWord" type="text" value={this.state.fullName} onChange={this.onSearch}/>
         </form>
       </section>
     );
