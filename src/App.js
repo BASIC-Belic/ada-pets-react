@@ -26,6 +26,7 @@ class App extends Component {
     this.setState ({
       currentPet: pet
     })
+    window.scrollTo(0, 0)
   }
 
   deletePet = (id) => {
