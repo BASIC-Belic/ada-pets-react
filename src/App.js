@@ -61,9 +61,12 @@ class App extends Component {
     }
   }
 
+  searchPet = (petObj) => {
+    console.log(petObj)
+  }
+
   render() {
     const { currentPet } = this.state;
-
     // this.state.currentPet ? { currentPet } = this.state : { currentPet } = ""
     let detailsSection = ""
     currentPet ? detailsSection = <PetDetails currentPet={currentPet}/> : detailsSection = ""
@@ -74,8 +77,7 @@ class App extends Component {
             <h1>Ada Pets</h1>
           </header>
           <section className="search-bar-wrapper">
-            { /* Wave 4:  Place to add the SearchBar component */ }
-            <SearchBar />
+            <SearchBar searchPetCallback={this.searchPet}/>
           </section>
           {detailsSection}
           <section className="pet-list-wrapper">
