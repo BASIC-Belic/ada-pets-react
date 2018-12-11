@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,7 +22,7 @@ const SearchBar = (props) => {
 };
 
 SearchBar.propTypes = {
-
+searchPetCallback: PropTypes.func
 };
 
 export default SearchBar;
