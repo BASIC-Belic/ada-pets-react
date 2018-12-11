@@ -44,7 +44,7 @@ class SearchBar extends Component {
   render() {
     return (
       <section>
-        <form  className="search-bar-form" onChange={this.props.onSearch}>
+        <form  className="search-bar-form" onChange={this.onSearch}>
           <h3>Search By Field</h3>
           { /* A form should go here! */ }
           <label htmlFor="fullName">Name</label>
