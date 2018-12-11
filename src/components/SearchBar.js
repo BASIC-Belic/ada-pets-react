@@ -9,9 +9,9 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fullName: "test",
-      about: "test",
-      species: "test"
+      fullName: "",
+      about: "",
+      species: ""
     };
   }
 
@@ -23,13 +23,13 @@ class SearchBar extends Component {
 
   searchByAbout = (event) => {
     this.setState({
-      fullName: event.target.value,
+      about: event.target.value,
     });
   }
 
   searchBySpecies = (event) => {
     this.setState({
-      fullName: event.target.value,
+      species: event.target.value,
     });
   }
 
