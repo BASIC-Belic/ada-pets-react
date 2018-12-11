@@ -37,8 +37,8 @@ const PetDetails = (props) => {
 PetDetails.propTypes = {
   currentPet: PropTypes.shape({
     about: PropTypes.string.isRequired,
-    images: PropTypes.array.isRequired,
-    location: PropTypes.string.isRequired,
+    images: PropTypes.array,
+    location: PropTypes.string,
     name: PropTypes.string.isRequired,
     species: PropTypes.string.isRequired,
   }),
