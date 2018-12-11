@@ -98,7 +98,6 @@ class App extends Component {
           </section>
           {detailsSection}
           <section className="pet-list-wrapper">
-
             <PetList pets={this.state.petList} onSelectPet={this.displayCurrentPet} onPetDelete={this.deletePet}/>
           </section>
           <section className="new-pet-form-wrapper">

@@ -15,8 +15,8 @@ const SearchBar = (props) => {
     return (
       <section>
         <form  className="search-bar-form">
-          <h3>Search By Field</h3>
-          <label htmlFor="searchWord">Search a Pet!</label>
+          <h3>Want a Pet?</h3>
+          <label htmlFor="searchWord">Search</label>
           <input name="searchWord" type="text" onChange={onSearch}/>
         </form>
       </section>
