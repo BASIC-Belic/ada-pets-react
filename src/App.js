@@ -35,13 +35,24 @@ class App extends Component {
     this.setState({
       petList: updatedPetList
     })
-
     if (this.state.currentPet === deletedPet[0]) {
       this.setState({
         currentPet: undefined
       })
     }
+  }
 
+  addPet = (newPet) => {
+    const pets = this.state.petList
+    newPet.id = pets[pets.length - 1].id + 1
+    console.log("id", newPet.id)
+
+    if (newPet.name !== "") {
+      //do something, add me
+    }
+    else {
+      alert("please enter valid name")
+    }
   }
 
   render() {
@@ -66,7 +77,7 @@ class App extends Component {
             <PetList pets={pets} onSelectPet={this.displayCurrentPet} onPetDelete={this.deletePet}/>
           </section>
           <section className="new-pet-form-wrapper">
-            { /* Wave 3:  Where NewPetForm should appear */ }
+            <NewPetForm addPetCallback={this.addPet}/>
           </section>
         </main>
       );
